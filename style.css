@@ -26,17 +26,13 @@ nav{
     display:flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    background:#262626;
-   
-    
-    
+    justify-content: space-between;  
  
 }
 .logo{
-    width:100px;
+    width:200px;
     height:100px;
-    border-radius:20%;
+    border-radius:6px;
    
 }
 nav ul li{
@@ -89,8 +85,11 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 .about-col-1 img{
-    width:100%;
-    border-radius: 15px;
+    width:500px;
+    height:400px;
+    border-radius: 16px;
+    margin-bottom: 50px;
+   
 }
 .about-col-2{
     flex-basis: 60%;
@@ -103,7 +102,8 @@ nav ul li a:hover::after{
 .sub-para{
     font-family:'Times New Roman', Times, serif;
     font-size: small;
-    color:#ababab
+    color:#ababab;
+    padding-top: 25px;
 }
 .tab-titles{
     display: flex;
