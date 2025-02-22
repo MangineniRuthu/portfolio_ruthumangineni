@@ -81,8 +81,8 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 .about-col-1 img{
-    width:500px;
-    height:400px;
+    width:450px;
+    height:450px;
     border-radius: 16px;
     margin-bottom: 50px;
    
