@@ -26,7 +26,7 @@ tablinks.forEach(tablink => {
   }
 
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw7jeUDN7JerjAKIT8isAD3GyrEGZ4FNdVU_OKRFQPfZI3oUH24vL6mWQ79u4WuU5Uzuw/exec'
+  /*const scriptURL = 'https://script.google.com/macros/s/AKfycbw7jeUDN7JerjAKIT8isAD3GyrEGZ4FNdVU_OKRFQPfZI3oUH24vL6mWQ79u4WuU5Uzuw/exec'
   const form = document.forms['submit-to-google-sheet']
   const msg=document.getElementById("msg");
 
@@ -41,4 +41,31 @@ tablinks.forEach(tablink => {
         form.reset();
       })
       .catch(error => console.error('Error!', error.message))
-  })
+  })*/
+ const scriptURL = 'https://script.google.com/macros/s/AKfycbw7jeUDN7JerjAKIT8isAD3GyrEGZ4FNdVU_OKRFQPfZI3oUH24vL6mWQ79u4WuU5Uzuw/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      msg.textContent = "Message Sent Successfully";
+      msg.className = "show success";
+
+      setTimeout(() => {
+        msg.classList.remove('show', 'success');
+      }, 5000);
+
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      msg.textContent = "Oops! Something went wrong.";
+      msg.className = "show error"; 
+
+      setTimeout(() => {
+        msg.classList.remove('show', 'error');
+      }, 5000);
+    });
+});
